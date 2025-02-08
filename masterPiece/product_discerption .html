@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marigold Seedlings - Product Description</title>
+    <link rel="stylesheet" href="/style/product_discerption .css">
+
+</head>
+
+<body style="background-color:#ECF5E4 ;">
+    <section>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // إعادة تفعيل زر الـ Burger Menu
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const menu = document.querySelector('.menu');
+                    if (menuToggle) {
+                        menuToggle.addEventListener('click', () => {
+                            menu.classList.toggle('active');
+                        });
+                    }
+                });
+        </script>
+
+
+
+        <div id="navbar" style="position: fixed; z-index: 10; width: 100%;"></div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container1">
+        <div class="content">
+            <!-- Product Image -->
+            <div>
+                <img src="/images/1_African-Marigolds.jpg" alt="Marigold Seedlings" class="product-image">
+            </div>
+
+            <!-- Product Details -->
+            <div class="details">
+                <h2>Marigold Seedlings</h2>
+                <p class="price">$10.99</p>
+                <p class="description">Brighten up your garden with our vibrant Marigold Seedlings. These easy-to-grow
+                    flowers are perfect for adding color and cheer to any outdoor space.</p>
+                <h4>Features:</h4>
+                <ul>
+                    <li>Vivid orange and yellow blooms</li>
+                    <li>Ideal for borders, pots, and gardens</li>
+                    <li>Low maintenance and drought tolerant</li>
+                </ul>
+                <h4>Benefits:</h4>
+                <ul>
+                    <li>Attracts beneficial pollinators like bees and butterflies</li>
+                    <li>Natural pest repellent for your vegetable garden</li>
+                    <li>Long-lasting blooms throughout the season</li>
+                </ul>
+
+                <!-- Buttons -->
+                <div class="btn-container">
+                    <button class="btn add-to-cart-btn">Add to Cart</button>
+                    <button class="btn buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+
+    </script>
+
+</body>
+
+</html>

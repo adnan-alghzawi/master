@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ornamental seedlings product</title>
+    <link rel="stylesheet" href="./style/product.css">
+</head>
+
+<body>
+    <section>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // إعادة تفعيل زر الـ Burger Menu
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const menu = document.querySelector('.menu');
+                    if (menuToggle) {
+                        menuToggle.addEventListener('click', () => {
+                            menu.classList.toggle('active');
+                        });
+                    }
+                });
+        </script>
+
+
+
+        <div id="navbar" style="position: fixed; z-index: 10; width: 100%;"></div>
+    </section>
+
+    <br><br>
+
+
+    <h2 style="text-align: center; margin-top: 4.5%;">Products</h2>
+
+    <section class="product_container">
+        <div class="product">
+            <img src="/images/1_African-Marigolds.jpg" alt=" Flower">
+            <h3>Marigold Seedlings</h3>
+            <p>$10.99</p>
+
+            <a href="cart.html" class="add-to-cart">Add to Cart</a>
+        </div>
+
+        <div class="product">
+            <img src="/images/images (1).jpg" alt=" Flower">
+            <h3>Petunia Seedlings</h3>
+            <p>$10.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="/images/shade-tolerant-impatiens-flowers-2132141-1-bd0a4240329940a2896d7a64282e67e1.jpg"
+                alt=" Flower">
+            <h3>Impatiens Seedlings</h3>
+            <p>$10.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="/images/sunflower-yellow-field-1678722527946.webp" alt=" Flower">
+            <h3>Sunflower Seedlings</h3>
+            <p>$10.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="/images/images (2).jpg" alt=" Flower">
+            <h3>Zinnia Seedlings</h3>
+            <p>$10.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="/images/s-l1200.jpg" alt=" Flower">
+            <h3>Coleus Seedlings</h3>
+            <p>$10.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+    <br><br><br>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+
+    </script>
+
+</body>
+
+</html>

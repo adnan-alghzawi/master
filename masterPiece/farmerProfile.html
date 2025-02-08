@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer John's Profile</title>
+    <link rel="stylesheet" href="./style/farmerProfile.css">
+</head>
+
+<body>
+    <section>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // إعادة تفعيل زر الـ Burger Menu
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const menu = document.querySelector('.menu');
+                    if (menuToggle) {
+                        menuToggle.addEventListener('click', () => {
+                            menu.classList.toggle('active');
+                        });
+                    }
+                });
+        </script>
+
+        <div id="navbar" style="position: fixed; z-index: 10; width: 100%;"></div>
+    </section>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+
+    <div class="farmer-profile">
+        <img src="/images/farmer2.webp" alt="Farmer John" class="profile-photo">
+        <h1>John Doe</h1>
+        <p>Location: west Irbid</p>
+        <p>Phone: 123-456-7890</p>
+        <p>Email: johndoe@example.com</p>
+        <a href="#" class="productLink">products</a>
+    </div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+
+    </script>
+</body>
+
+</html>

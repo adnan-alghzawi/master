@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe</title>
+    <link rel="stylesheet" href="./style/subscribe.css"> <!-- يفترض وجود ملف الأنماط المشتركة -->
+
+</head>
+
+<body style="background-color:#ECF5E4 ;">
+
+    <section>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // إعادة تفعيل زر الـ Burger Menu
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const menu = document.querySelector('.menu');
+                    if (menuToggle) {
+                        menuToggle.addEventListener('click', () => {
+                            menu.classList.toggle('active');
+                        });
+                    }
+                });
+        </script>
+
+
+
+        <div id="navbar" style="position: fixed; z-index: 10; width: 100%;"></div>
+    </section>
+
+    <br><br><br><br>
+
+    <div class="container">
+        <h1 style="color: #2f4f2f; text-align: center;">Our Subscription Plans</h1>
+        <div class="subscription-container">
+            <div class="subscription-plan">
+                <h2 class="plan-title">Monthly Plan</h2>
+                <p class="plan-details">Enjoy monthly deliveries of fresh produce directly from our farms. Includes free
+                    shipping and exclusive updates.</p>
+                <button class="subscribe-button">Subscribe - $15/month</button>
+            </div>
+
+            <div class="subscription-plan">
+                <h2 class="plan-title">Quarterly Plan</h2>
+                <p class="plan-details">Get a seasonal selection every three months. Save more and keep your pantry
+                    stocked with the best.</p>
+                <button class="subscribe-button">Subscribe - $30/quarter</button>
+            </div>
+
+            <div class="subscription-plan">
+                <h2 class="plan-title">Annual Plan</h2>
+                <p class="plan-details">Our best value plan. Receive monthly shipments and enjoy comprehensive support
+                    and guidance from our team.</p>
+                <button class="subscribe-button">Subscribe - $90/year</button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9F9F9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .checkout-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #ECF5E4;
+            ;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 94%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .summary {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary h3 {
+            margin: 0 0 10px;
+            color: #4CAF50;
+        }
+
+        .summary p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .checkout-btn:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        .checkout-btn:active {
+            background-color: #3e8e41;
+            transform: translateY(0);
+        }
+
+        /* Layout */
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color:#ECF5E4 ;">
+
+    <section>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // إعادة تفعيل زر الـ Burger Menu
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const menu = document.querySelector('.menu');
+                    if (menuToggle) {
+                        menuToggle.addEventListener('click', () => {
+                            menu.classList.toggle('active');
+                        });
+                    }
+                });
+        </script>
+
+        <div id="navbar" style="position: fixed; z-index: 10; width: 100%;"></div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+
+        <div class="cards-container">
+            <!-- Shipping Details -->
+            <div class="card">
+                <h3>Shipping Details</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Enter your shipping address"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" id="zip" name="zip" placeholder="Enter your zip code" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="card">
+                <h3>Payment Information</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="cardname">Cardholder Name</label>
+                        <input type="text" id="cardname" name="cardname" placeholder="Name on card" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardnumber">Card Number</label>
+                        <input type="text" id="cardnumber" name="cardnumber" placeholder="Enter your card number"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expirydate">Expiry Date</label>
+                        <input type="month" id="expirydate" name="expirydate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="summary">
+            <h3>Order Summary</h3>
+            <p>Marigold Seedlings: $10.99</p>
+            <p>Coleus Seedlings: $10.99</p>
+            <p><strong>Total: $21.98</strong></p>
+        </div>
+
+        <!-- Checkout Button -->
+        <div class="btn-container">
+
+            <button type="button" class="checkout-btn" onclick="placeOrder()">Place Order</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script>
+        function placeOrder() {
+            // حساب موقع النافذة لتظهر في المركز
+            const width = 400;
+            const height = 300;
+            const left = (window.screen.width / 2) - (width / 2);
+            const top = (window.screen.height / 2) - (height / 2);
+
+            // فتح النافذة المنبثقة
+            var popup = window.open('', 'Order Confirmation', `width=${width},height=${height},top=${top},left=${left}`);
+            popup.document.write('<style>body { font-family: Arial, sans-serif; text-align: center; padding: 20px; } h1 { color: #4CAF50; margin-bottom: 20px; } button { background-color: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; } button:hover { background-color: #45a049; }</style>');
+            popup.document.write('<h1>Order Placed Successfully!</h1>');
+            popup.document.write('<p>Thank you for your purchase. Your order is being processed.</p>');
+            popup.document.write('<button onclick="window.close()">Close</button>');
+        }
+    </script>
+
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+
+    </script>
+
+</body>
+
+</html>

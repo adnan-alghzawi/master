@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmers Page</title>
+    <link rel="stylesheet" href="./style/farmers.css">
+</head>
+
+<body style="background-color:#ECF5E4 ;">
+    <section>
+        <script>
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+
+                    // إعادة تفعيل زر الـ Burger Menu
+                    const menuToggle = document.querySelector('.menu-toggle');
+                    const menu = document.querySelector('.menu');
+                    if (menuToggle) {
+                        menuToggle.addEventListener('click', () => {
+                            menu.classList.toggle('active');
+                        });
+                    }
+                });
+        </script>
+
+        <div id="navbar" style="position: fixed; z-index: 10; width: 100%;"></div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <h1>Meet Our Farmers</h1>
+        <div class="farmers-grid">
+            <div class="farmer">
+                <img src="./images/farmer2.webp" alt="Farmer John" class="farmer-photo">
+                <h2>John Doe</h2>
+                <p>Location: west Irbid</p>
+            </div>
+            <div class="farmer">
+                <img src="./images/farmer4.webp" alt="Farmer Jane" class="farmer-photo">
+                <h2>Jane Smith</h2>
+                <p>Location: jordan valley</p>
+            </div>
+            <div class="farmer">
+                <img src="./images/farmer1.webp" alt="Farmer Jim" class="farmer-photo">
+                <h2>Jim Beam</h2>
+                <p>Location: east Irbid</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+
+    </script>
+</body>
+
+</html>
